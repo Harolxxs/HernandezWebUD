@@ -17,28 +17,31 @@
 
             <div class="form-title">Simulador CDT</div>
 
-            <!-- INVERSIÓN -->
+            
             <h:outputLabel for="inversion" value="Inversión:" styleClass="label"/>
-            <h:inputText id="inversion" value="#{cdt.inversion}" required="true" styleClass="input">
+            <h:inputText id="inversion" value="#{cdt.inversion}" required="true"  styleClass="input">
+             
                 <f:convertNumber maxFractionDigits="2" />
             </h:inputText>
 
-            <!-- INTERÉS -->
+          
             <h:outputLabel for="interes" value="Interés (% E.A.):" styleClass="label"/>
             <h:inputText id="interes" value="#{cdt.interes}" required="true" styleClass="input"/>
 
-            <!-- PLAZO -->
+      
             <h:outputLabel for="plazo" value="Plazo (días):" styleClass="label"/>
             <h:inputText id="plazo" value="#{cdt.plazo}" required="true" styleClass="input"/>
+            
+                    <h:messages globalOnly="false" style="color:red; font-weight:bold;" layout="list" />
 
-            <!-- BOTÓN -->
+            
             <h:commandButton value="Calcular Ganancia"
                              action="#{cdt.calcular}"
                              styleClass="btn">
                 <f:ajax execute="@form" render="@form"/>
             </h:commandButton>
 
-            <!-- RESULTADOS -->
+         
             <h:panelGroup rendered="#{cdt.ganancia > 0}" layout="block" styleClass="result">
 
                 <h:outputText value="Valor Ganancia: " />
@@ -70,7 +73,7 @@
 
     </div>
 
-    <!-- FOOTER -->
+
     <footer style="text-align:center; margin-top:40px; font-size:12px; color:#6e6e73;">
         <a href="index.xhtml" style="text-decoration:none; color:#0071e3;">Inicio</a>
         <br/><br/>
